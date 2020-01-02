@@ -1,12 +1,12 @@
 import java.lang.Math;
 import java.util.Scanner;
 
-class Dog { //dog class; this class does not contain any System.out.println() instructions, in case I decide to modify this program to display a GUI
+class Dog { // dog class; this class does not contain any System.out.println() instructions, in case I decide to modify this program to display a GUI
 	String name;
 	boolean alive, healthy, happy, hungry, clean;
 	int age;
 
-	public Dog(String n) { //constructor
+	public Dog(String n) { // constructor
 		name = n;
 		alive = true;
 		healthy = true;
@@ -16,31 +16,31 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 		age = 0;
 	}
 
-	public boolean getAlive() { //alive accessor method
+	public boolean getAlive() { // alive accessor method
 		return alive;
 	}
 
-	public boolean getHealthy() { //health accessor method
+	public boolean getHealthy() { // health accessor method
 		return healthy;
 	}
 
-	public boolean getHappy() { //happy accessor method
+	public boolean getHappy() { // happy accessor method
 		return happy;
 	}
 
-	public boolean getHungry() { //hungry accessor method
+	public boolean getHungry() { // hungry accessor method
 		return hungry;
 	}
 
-	public boolean getClean() { //clean accessor method
+	public boolean getClean() { // clean accessor method
 		return clean;
 	}
 
-	public int getAge() { //age accessor method
+	public int getAge() { // age accessor method
 		return age;
 	}
 
-	public String vet() { //take dog to vet
+	public String vet() { // take dog to vet
 		if(healthy)
 			return name + " does not need to go to the vet.";
 		else {
@@ -49,7 +49,7 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 		}
 	}
 
-	public String play() { //play with dog
+	public String play() { // play with dog
 		happy = true;
 		int x = (int)(100 * Math.random());
 		if(x <= 25) {
@@ -66,19 +66,19 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 			return name + " played, and had a lot of fun!";
 	}
 
-	private boolean yummy(String f) { //yummy food test
+	private boolean yummy(String f) { // yummy food test
 		if(f.equals("bacon") || f.equals("apples") || f.equals("peanut butter"))
 			return true;
 		return false;
 	}
 
-	private boolean poisonous(String f) { //poisonous food test
+	private boolean poisonous(String f) { // poisonous food test
 		if(f.equals("chocolate") || f.equals("grapes"))
 			return true;
 		return false;
 	}
 
-	public String feed(String food) { //feed the dog
+	public String feed(String food) { // feed the dog
 		if(!hungry)
 			return name + " does not want to eat.";
 		else if(yummy(food)) {
@@ -95,7 +95,7 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 			return name + " ate the " + food + " and is not hungry anymore.";
 	}
 
-	public String bathe() { //bathe the dog
+	public String bathe() { // bathe the dog
 		if(clean)
 			return name + " does not need a bath.";
 		else {
@@ -109,7 +109,7 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 		}
 	}
 
-	public String grow() { //growth of the dog
+	public String grow() { // growth of the dog
 		if(age < 15) {
 			age++;
 			int x = (int)(100 * Math.random());
@@ -120,7 +120,7 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 				healthy = false;
 				happy = false;
 				return name + " woke up feeling ill!";
-			} else if(x % 10 == 0) {
+			} else if(x % 20 == 0) {
 				alive = false;
 				return "Oh no, " + name + " got run over by a car!";
 			} else
@@ -132,12 +132,12 @@ class Dog { //dog class; this class does not contain any System.out.println() in
 	}
 }
 
-public class DogGame { //dog game class
+public class DogGame { // dog game class
 	String dogName, input, food;
 	Dog theDog;
 	int counter = 1;
 
-	public void gamePlay() { //the game play
+	public void gamePlay() { // the gameplay
 		Scanner in = new Scanner(System.in);
 		System.out.println("What is your dog's name?");
 		dogName = in.nextLine();
@@ -181,7 +181,7 @@ public class DogGame { //dog game class
 			System.out.println();
 		}
 
-		if(!theDog.getAlive()) { //if the dog died
+		if(!theDog.getAlive()) { // if the dog died
 			System.out.println(".::GAME OVER::.");
 			System.out.println();
 			System.out.println("Final stats:");
@@ -191,7 +191,7 @@ public class DogGame { //dog game class
 		}
 	}
 	
-	public void displayStats() { //display dog stats
+	public void displayStats() { // display dog stats
 		System.out.println("Name: " + dogName);
 		System.out.println("Age: " + theDog.getAge() + " y/o");
 		if(theDog.getHealthy())
@@ -212,7 +212,7 @@ public class DogGame { //dog game class
 			System.out.println("Clean: No");
 	}
 
-	public void displayHelp() { //display help/options
+	public void displayHelp() { // display help/options
 		System.out.println("Enter 'stats' to view your dog's stats.");
 		System.out.println("Enter 'play' to play with your dog.");
 		System.out.println("Enter 'feed' to feed your dog.");
@@ -224,8 +224,8 @@ public class DogGame { //dog game class
 	}
 }
 
-class ExecuteDogGame { //class with main method; this is the .class file to execute
-	public static void main(String args[]) { //main method
+class ExecuteDogGame { // class with main method; this is the .class file to execute
+	public static void main(String args[]) { // main method
 		Scanner in = new Scanner(System.in);
 		while(true) {
 			System.out.println("\nWould you like to raise a dog? y/n");
